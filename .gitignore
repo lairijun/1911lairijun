@@ -2,8 +2,11 @@
 
 # dependencies
 node_modules
+<<<<<<< HEAD
+=======
 /node_modules
 /serverAPI/node_modules
+>>>>>>> 2f68552db4baa757691e35be91b0baa36260d2ea
 /.pnp
 .pnp.js
 
