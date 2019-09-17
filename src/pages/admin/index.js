@@ -3,6 +3,7 @@ import './index.less'
 import LeftNav from 'components/leftnav'
 class Admin extends Component{
     render(){
+        console.log(this)
         return(
             <div className='admin'>
             <div className='admin-left'>
