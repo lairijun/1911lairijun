@@ -3,7 +3,7 @@ class Wd extends Component{
     render(){
         return(
             <div>
-                是傻逼
+                过年好
             </div>
         )
     }
