@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import { Card ,Button, message} from 'antd'
-import {withRouter} from 'react-router-dom'
 import  qs from 'qs'
 class FoodAdd extends Component{
    constructor(){
@@ -15,7 +14,7 @@ class FoodAdd extends Component{
          console.log(query)
          this.$axios.get('/hehe/admin/food/addFood?'+query)
          .then((data)=>{
-            if(data.err==0){
+            if(data.err===0){
                message.success('add ok')
             }
          })
@@ -34,7 +33,7 @@ class FoodAdd extends Component{
    // 将文件信息以 hehe 为key 添加点到formdata对象里面去
    this.$axios.post('/hehe/admin/file/img',formdata)
    .then((data)=>{
-      if(data.err == 0){
+      if(data.err ===0){
          this.setState({imgPath:data.imgPath})
       }else{
          message.error('文件上传失败请重试')

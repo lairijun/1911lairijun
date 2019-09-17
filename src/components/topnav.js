@@ -1,9 +1,16 @@
 import React,{Component} from 'react'
 import {Menu,Icon} from 'antd'
-// import {Switch} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import  './topnav.less'
 const {SubMenu}=Menu;
  class Topnav extends Component{
+loginout=(path)=>{
+  console.log(this.props)
+  localStorage.removeItem('logindata')
+  this.props.history.push(path)
+
+}
+
   state = {
     current: 'mail',
   };
@@ -38,7 +45,7 @@ render(){
           title={
             <div className="hand">
              <div className='handimg'>
-               <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'/>
+               <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png' alt=''/>
           </div>
          
  
@@ -55,7 +62,7 @@ render(){
           个人设置
         </Menu.Item>
 
-        <Menu.Item key="logout" >
+        <Menu.Item key="logout" onClick={this.loginout.bind(this,'/login')}>
           <Icon type="logout" />
           退出登录
         </Menu.Item>
@@ -71,4 +78,4 @@ render(){
     )
 }
  }
- export default Topnav
+ export default withRouter(Topnav)

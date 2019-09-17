@@ -24,7 +24,7 @@ class RootRouter extends Component{
                 }}></Route>
                 <Route path='/login' component={Login}></Route>
                 
-              </Switch>    
+              </Switch>     
             </HashRouter>
             </App>
         )

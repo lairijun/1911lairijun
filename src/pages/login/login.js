@@ -16,9 +16,11 @@ class Login extends Component{
             }else if(res.data.err===-1){
                 alert('用户名密码错误')
             }else{
+             
                 let us=res.data.username
-                let token=res.data.token
-                this.props.history.push({pathname:'/admin',state:{us,token}})
+                let token=res.data.token 
+                  console.log(us,token)
+                this.props.history.push({pathname:'/admin',state:{us:us,token:token}})
             }
         })
     }
