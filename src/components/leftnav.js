@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {Menu,Icon} from 'antd'
 import {Switch} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 const {SubMenu}=Menu;
  class leftNav extends Component{
     state = {
@@ -13,6 +14,9 @@ const {SubMenu}=Menu;
           current: e.key,
         });
       };
+      jump=(path)=>{
+        this.props.history.push(path)
+      }
 render(){
     return(
         <div>
@@ -77,12 +81,12 @@ render(){
               </span>
             }
           >
-           <Menu.Item key="20">客户管理</Menu.Item>
-            <Menu.Item key="21">管理员管理</Menu.Item>
+           <Menu.Item key="20" onClick={this.jump.bind(this,'/admin/usermanage')}>客户管理</Menu.Item>
+            <Menu.Item key="21"onClick={this.jump.bind(this,'/admin/adminmanage')}>管理员管理</Menu.Item>
           </SubMenu>
         </Menu>
       </div>
     )
 }
  }
- export default leftNav
+ export default withRouter(leftNav)
