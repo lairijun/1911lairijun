@@ -291,7 +291,9 @@ module.exports = function(webpackEnv) {
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
         'style':path.resolve(__dirname,'../src/style'),
-        'utils':path.resolve(__dirname,'../src/utils')
+        'pages':path.resolve(__dirname,'../src/pages'),
+        'utils':path.resolve(__dirname,'../src/utils'),
+        'components':path.resolve(__dirname,'../src/components')
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -364,6 +366,8 @@ module.exports = function(webpackEnv) {
                 ),
                 
                 plugins: [
+                  ['import',{'libraryName':'antd','style':true}]  ,
+                
                   [
                     require.resolve('babel-plugin-named-asset-import'),
                     {

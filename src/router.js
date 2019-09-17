@@ -1,24 +1,18 @@
 import React,{Component} from 'react'
-import {HashRouter,NavLink,Switch,Redirect,Route} from 'react-router-dom'
-
-import Yifeng from './pages/zyf'
-import Hengyuan from './pages/hengyuan.js'
-import Wm from './pages/wm'
-import Wd from './pages/wd'
+import {HashRouter,Switch,Redirect,Route} from 'react-router-dom'
+import App from './App'
+import Admin from 'pages/admin'
 class RootRouter extends Component{
     render(){
         return(
+            <App>
             <HashRouter>
-                <NavLink to='/hengyuan'>hengyuan</NavLink>
-                <NavLink to='/yifeng'>张益峰</NavLink> 
-                <NavLink to='/wuming'>吴茗</NavLink>
-                <NavLink to='/weidong'>他们三个</NavLink>   
-                <Redirect exact from='/' to='/hengyuan'></Redirect>
-                <Route path='/hengyuan' component={Hengyuan}></Route>
-                <Route path='/yifeng' component={Yifeng}></Route>
-                <Route path='/wuming' component={Wm}></Route>
-                <Route path='/weidong' component={Wd}></Route>
+                <Switch>
+                <Redirect exact from='/' to='/admin'></Redirect>
+                <Route path='/admin' component={Admin}></Route>
+              </Switch>    
             </HashRouter>
+            </App>
         )
     }
 }
