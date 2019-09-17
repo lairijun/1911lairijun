@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import {Menu,Icon} from 'antd'
-import {Switch} from 'react-router-dom'
+import {Switch,withRouter} from 'react-router-dom'
+
+
 const {SubMenu}=Menu;
  class leftNav extends Component{
     state = {
@@ -13,7 +15,10 @@ const {SubMenu}=Menu;
           current: e.key,
         });
       };
-render(){
+  jump=(path)=>{
+    this.props.history.push({pathname:path})
+  }
+  render(){
     return(
         <div>
         <Switch
@@ -52,10 +57,8 @@ render(){
               </span>
             }
           >
-          
-            <SubMenu key="sub3" title="Submenu">
-          
-            </SubMenu>
+           <Menu.Item key="30" onClick={this.jump.bind(this,'/admin/goodsadd')}>商品添加</Menu.Item>
+       
           </SubMenu>
           <SubMenu
             key="sub4"
@@ -85,4 +88,4 @@ render(){
     )
 }
  }
- export default leftNav
+ export default withRouter(leftNav)

@@ -10,7 +10,9 @@ class Admin extends Component{
             </div>
             <div className='admin-right'>
              <div className='admin-right-top'>top</div>
-             <div className='admin-right-center'>  {this.props.children}</div>
+             <div className='admin-right-center'>  
+                {this.props.children}
+             </div>
              <div className='admin-right-footer'>footer</div>
             </div>
           </div>
