@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { Card ,Button, message} from 'antd'
+import {withRouter} from 'react-router-dom'
 import  qs from 'qs'
 class FoodAdd extends Component{
    constructor(){
@@ -71,4 +72,4 @@ class FoodAdd extends Component{
     )
   }
 }
-export default  FoodAdd
+export default FoodAdd
