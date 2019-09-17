@@ -4,6 +4,7 @@ import LeftNav from 'components/leftnav'
 import TopNav from 'components/topnav'
 class Admin extends Component{
     render(){
+        console.log(this)
         return(
             <div className='admin'>
             <div className='admin-left'>
