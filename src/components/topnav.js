@@ -56,6 +56,7 @@ render(){
             <div className="hand">
              <div className='handimg'>
                <img alt='' src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'/>
+         <span>{userinfo}</span>
           </div>
             </div>
           }
