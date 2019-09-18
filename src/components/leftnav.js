@@ -15,17 +15,10 @@ const {SubMenu}=Menu;
           current: e.key,
         });
       };
-<<<<<<< HEAD
-  jump=(path)=>{
-    this.props.history.push({pathname:path})
-  }
-  render(){
-=======
     jump=(path)=>{
       this.props.history.push({pathname:path})
     }
     render(){
->>>>>>> e73ac75e350c9d122d1e2ea94a4e4036c207dd77
     return(
         <div>
         <Switch

@@ -55,12 +55,8 @@ render(){
           title={
             <div className="hand">
              <div className='handimg'>
-<<<<<<< HEAD
-               <img alt='' src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'/>
-=======
                <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png' alt=''/>
           <span>{userinfo}</span>
->>>>>>> e73ac75e350c9d122d1e2ea94a4e4036c207dd77
           </div>
             </div>
           }
