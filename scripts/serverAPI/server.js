@@ -18,6 +18,11 @@ app.use('/public',express.static(path.join(__dirname,'./www')))
 const AdminUser = require('./router/admin/userRouter')
 app.use('/admin/user',AdminUser)
 
+//商品添加
+const GoodsAdd = require('./router/admin/goodsRouter')
+app.use('/admin/goods',GoodsAdd)
+
+
 //菜品管理
 const AdminFood = require('./router/admin/foodRouter')
 app.use('/admin/food',(req,res,next)=>{
@@ -43,8 +48,8 @@ app.use('/admin/food',(req,res,next)=>{
 app.post('/imgupload',multer().single('img'),(req,res)=>{
     console.log(req.file)
     let {buffer,mimetype} = req.file
-    let filename=(new Date().getTime()+parseInt(Math.random()*999999)+parseInt(Math.random()*999999))
-    let extname=mimetype.split('/')[1]
+    let filename=(new Date().getTime()+parseInt(Math.random()*999999)+parseInt(Math.random()*999999))//独一无二图片名
+    let extname=mimetype.split('/')[1] //文件后缀img/gif,选gif
     let dir=path.join(__dirname,'./www/images')
     let imgpath=`/public/images/${filename}.${extname}`
     fs.writeFile(`${dir}/${filename}.${extname}`,buffer,(err)=>{
