@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import { Card, Button ,message} from 'antd'
+import {Card, Button ,message} from 'antd'
 // import  qs from 'qs'
 import  './goodsAdd.less'
 class GoodsAdd extends Component{
