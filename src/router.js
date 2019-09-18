@@ -6,11 +6,13 @@ import Login from 'pages/login/login.js'
 import UserManage from 'pages/usermanage/usermanage.js'
 import AdminManage from 'pages/adminmanage/adminmanage.js'
 import Goodsadd from 'pages/goods/goodsAdd'
+import TokenModel from 'components/tokenModel'
 class RootRouter extends Component{
     render(){
         return(
             <App>
             <HashRouter>
+            <TokenModel></TokenModel>
                 <Switch>
                 <Redirect exact from='/' to='/login'></Redirect>
                 <Route path='/admin' render={()=>{

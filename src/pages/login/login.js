@@ -19,7 +19,8 @@ class Login extends Component{
              
                 let us=res.data.username
                 let token=res.data.token 
-                  console.log(us,token)
+                //   console.log(us,token)
+                  localStorage.setItem('token',token)
                 this.props.history.push({pathname:'/admin',state:{us:us,token:token}})
             }
         })

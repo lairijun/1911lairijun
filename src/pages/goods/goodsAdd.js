@@ -6,6 +6,15 @@ class FoodAdd extends Component{
       super()
       this.state={name:'',price:'',imgPath:'',desc:"",foodType:"热菜"}
    }
+   // initData=()=>{
+   //    this.$axios.post('/hehe/admin/food/addFood',{name:'1s',price:'asd',imgPath:'we',desc:'4sd',foodtype:'ads'}).then((data)=>{
+   //      console.log(data)
+   //    })
+   //  }
+   //  componentDidMount(){
+   //    this.initData()
+   //  }
+
   submit=()=>{
      let {name,price,imgPath,desc,foodType} = this.state
      console.log({name,price,imgPath,desc,foodType})
