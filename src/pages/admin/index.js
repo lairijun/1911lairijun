@@ -3,6 +3,7 @@ import './index.less'
 import {withRouter} from 'react-router-dom'
 import LeftNav from 'components/leftnav'
 import TopNav from 'components/topnav'
+
 class Admin extends Component{
   componentDidMount(){
   if(!localStorage.getItem('us')){
@@ -20,6 +21,7 @@ class Admin extends Component{
     // localStorage.setItem("logindata",`[{"us":${this.props.location.state.us}},{"token":${this.props.location.state.token}}]`)
   }
     render(){
+      
         return(
             <div className='admin'>
             <div className='admin-left'>
