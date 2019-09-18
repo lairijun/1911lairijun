@@ -6,10 +6,7 @@ import Login from 'pages/login/login.js'
 import UserManage from 'pages/usermanage/usermanage.js'
 import AdminManage from 'pages/adminmanage/adminmanage.js'
 import Goodsadd from 'pages/goods/goodsAdd'
-<<<<<<< HEAD
-=======
 import TokenModel from 'components/tokenModel'
->>>>>>> e73ac75e350c9d122d1e2ea94a4e4036c207dd77
 class RootRouter extends Component{
     render(){
         return(
@@ -24,21 +21,12 @@ class RootRouter extends Component{
                             <Route exact path='/admin/usermanage' component={UserManage}></Route>
                             <Route exact path='/admin/adminmanage' component={AdminManage}></Route>
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
-<<<<<<< HEAD
-                         </Admin>
-                    )
-                }}></Route>
-                <Route path='/login' component={Login}></Route>
-               
-              </Switch>    
-=======
                         </Admin>
                     )
                 }}></Route>
                 <Route path='/login' component={Login}></Route>
                 
               </Switch>     
->>>>>>> e73ac75e350c9d122d1e2ea94a4e4036c207dd77
             </HashRouter>
             </App>
         )
