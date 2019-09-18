@@ -1,21 +1,40 @@
 import React,{Component} from 'react'
 import {Menu,Icon} from 'antd'
-// import {Switch} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import  './topnav.less'
+// import Store from 'store/store'
 const {SubMenu}=Menu;
+
+
  class Topnav extends Component{
-  state = {
-    current: 'mail',
-  };
+    loginout=(path)=>{
+      localStorage.removeItem('us')
+      localStorage.removeItem('token')
+      this.props.history.push(path)
+        };
 
-  handleClick = e => {
-    console.log('click ', e);
-    this.setState({
-      current: e.key,
-    });
-  };
+    state = {
+        current: 'mail',
+      };
 
+    handleClick = e => {
+      console.log('click ', e);
+      this.setState({
+        current: e.key,
+      });
+    };
+componentDidMount(){
+  let us=localStorage.getItem('us')
+  // console.log(this)
+  this.setState({us})
+}
 render(){
+  // console.log(localStorage.getItem('us'))
+  // console.log(Store.getState())
+
+  // let userinfo= Store.getState()
+ let userinfo=localStorage.getItem('us')
+//   console.log(userinfo)
     return(
         <div className='topwarp'>
        <Menu  className='top' onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
@@ -32,16 +51,17 @@ render(){
         <Menu.Item key="bell" >
           <Icon type="bell" />
        </Menu.Item>
-    
- 
              <SubMenu
           title={
             <div className="hand">
              <div className='handimg'>
+<<<<<<< HEAD
                <img alt='' src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'/>
+=======
+               <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png' alt=''/>
+          <span>{userinfo}</span>
+>>>>>>> e73ac75e350c9d122d1e2ea94a4e4036c207dd77
           </div>
-         
- 
             </div>
           }
         >
@@ -55,7 +75,7 @@ render(){
           个人设置
         </Menu.Item>
 
-        <Menu.Item key="logout" >
+        <Menu.Item key="logout" onClick={this.loginout.bind(this,'/login')}>
           <Icon type="logout" />
           退出登录
         </Menu.Item>
@@ -71,4 +91,4 @@ render(){
     )
 }
  }
- export default Topnav
+ export default withRouter(Topnav)
