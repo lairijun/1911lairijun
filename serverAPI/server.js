@@ -81,6 +81,11 @@ app.post('/imgupload',multer().single('img'),(req,res)=>{
     })
 })
 
+//用户管理
+const UserAdmin = require('./router/admin/umRouter')
+app.use('/admin/usermanage',UserAdmin)
+
+
 app.listen(8080,()=>{
     console.log('server start')
 })
