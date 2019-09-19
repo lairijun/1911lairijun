@@ -38,7 +38,7 @@ render(){
           title={
             <div className="hand">
              <div className='handimg'>
-               <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'/>
+               <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png' alt=""/>
           </div>
          
  
