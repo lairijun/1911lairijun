@@ -92,7 +92,7 @@ const {SubMenu}=Menu;
             }
           >
            <Menu.Item key="20" onClick={this.jump.bind(this,'/admin/usermanage')}>客户管理</Menu.Item>
-            <Menu.Item key="21"onClick={this.jump.bind(this,'/admin/adminmanage')}>管理员管理</Menu.Item>
+            <Menu.Item key="21" onClick={this.jump.bind(this,'/admin/adminmanage')}>管理员管理</Menu.Item>
           </SubMenu>
         </Menu>
       </div>
