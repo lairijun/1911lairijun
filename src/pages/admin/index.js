@@ -21,11 +21,7 @@ class Admin extends Component{
     // localStorage.setItem("logindata",`[{"us":${this.props.location.state.us}},{"token":${this.props.location.state.token}}]`)
   }
     render(){
-<<<<<<< HEAD
       
-=======
-        console.log(777,this)
->>>>>>> zhy
         return(
             <div className='admin'>
             <div className='admin-left'>
