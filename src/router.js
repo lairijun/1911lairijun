@@ -7,7 +7,8 @@ import UserManage from 'pages/usermanage/usermanage.js'
 import AdminManage from 'pages/adminmanage/adminmanage.js'
 import Goodsadd from 'pages/goods/goodsAdd'
 import TokenModel from 'components/tokenModel'
-import Banner from 'pages/title/banner/bannerAdd.js'
+import Banneradd from 'pages/title/banner/bannerAdd.js'
+import Bannerlist from 'pages/title/banner/bannerList.js'
 class RootRouter extends Component{
     render(){
         return(
@@ -22,7 +23,8 @@ class RootRouter extends Component{
                             <Route exact path='/admin/usermanage' component={UserManage}></Route>
                             <Route exact path='/admin/adminmanage' component={AdminManage}></Route>
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
-                            <Route path='/admin/banner/add' component={Banner}></Route>
+                            <Route path='/admin/banner/add' component={Banneradd}></Route>
+                            <Route path='/admin/banner/list' component={ Bannerlist}></Route>
                         </Admin>
                     )
                 }}></Route>
