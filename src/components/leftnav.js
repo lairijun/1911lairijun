@@ -43,7 +43,18 @@ const {SubMenu}=Menu;
               </span>
             }
           >
-            <Menu.Item key="9">banner管理</Menu.Item>
+            <SubMenu key="9"  title={
+              <span>
+                <Icon type="mail" />
+                <span>banner管理</span>
+              </span>
+            }>
+              <Menu.Item key="91">轮播图列表</Menu.Item>
+              <Menu.Item key="92" onClick={this.jump.bind(this,'/admin/banner/add')}>轮播图添加</Menu.Item>
+              <Menu.Item key="93">轮播图修改</Menu.Item>
+              <Menu.Item key="94">轮播图删除</Menu.Item>
+            
+            </SubMenu>
             <Menu.Item key="10">广告位管理</Menu.Item>
             <Menu.Item key="11">标题栏管理</Menu.Item>
             <Menu.Item key="12">...</Menu.Item>
