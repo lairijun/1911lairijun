@@ -7,6 +7,19 @@ class GoodsAdd extends Component{
       super()
       this.state={name:'',price:'',imgpath:'',desc:'',goodstype:'男装'}
    }
+
+//    initData(){
+//         this.$axios.post('/hehe/admin/goods/goodsadd',{
+//             name:'wqe',price:'41',imgpath:'asd',desc:'das',goodstype:'sad'
+//         }).then((res)=>{
+//             console.log(res)
+//         })
+//    }
+
+//    componentDidMount(){
+//         this.initData()
+//    }
+
    submit=()=>{   //商品信息上传
         let {name,price,imgpath,desc,goodstype} = this.state
         console.log({name,price,imgpath,desc,goodstype})
