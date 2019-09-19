@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 import axios from 'utils/axios.js';
 import RootRouter from './router'
-import Store from './store/store'
+import Store from 'store/store'
 import {Provider} from 'react-redux'
 React.Component.prototype.$axios=axios
 ReactDOM.render(

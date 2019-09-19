@@ -8,7 +8,7 @@ router.post('/login',(req,res)=>{
     let {us,ps} =req.body
     userModel.find({username:us})
     .then((data)=>{
-        if(data[0].username==us && data[0].password==ps){
+        if(data[0].username===us && data[0].password===ps){
             let token=jwt.sign({us:us,uid:ps},secret,{expiresIn:'7d'})
             res.send({err:0,msg:'登录ok',username:us,token:token})
         }else{

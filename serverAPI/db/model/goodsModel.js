@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const GoodsSchema = mongoose.Schema({
     name:{type:String,required:true},
     desc:{type:String,required:true},
-    img:{type:String,required:true},
+    imgpath:{type:String,required:true},
     price:{type:String,required:true},
     goodstype:{type:String,required:true}
 })

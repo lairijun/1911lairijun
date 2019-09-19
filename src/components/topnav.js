@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {Menu,Icon} from 'antd'
 import {withRouter} from 'react-router-dom'
 import  './topnav.less'
+// import Store from 'store/store'
 const {SubMenu}=Menu;
 
 
@@ -24,11 +25,16 @@ const {SubMenu}=Menu;
     };
 componentDidMount(){
   let us=localStorage.getItem('us')
-  console.log(this)
+  // console.log(this)
   this.setState({us})
 }
 render(){
-  console.log(this)
+  // console.log(localStorage.getItem('us'))
+  // console.log(Store.getState())
+
+  // let userinfo= Store.getState()
+ let userinfo=localStorage.getItem('us')
+//   console.log(userinfo)
     return(
         <div className='topwarp'>
        <Menu  className='top' onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
@@ -49,8 +55,8 @@ render(){
           title={
             <div className="hand">
              <div className='handimg'>
-               <img src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png' alt=''/>
-          <span>{this.state.us}</span>
+               <img alt='' src='https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png'/>
+         <span>{userinfo}</span>
           </div>
             </div>
           }

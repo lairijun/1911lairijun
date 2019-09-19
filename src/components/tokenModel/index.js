@@ -3,7 +3,7 @@ import {Card} from 'antd'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {bindActionCreators} from 'redux'
-import ActionCreator from '../../store/actionCreator'
+import ActionCreator from 'store/actionCreator'
 import './index.less'
 class TokenModel extends Component{
     back=()=>{

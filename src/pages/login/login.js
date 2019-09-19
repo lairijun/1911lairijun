@@ -3,6 +3,7 @@ import { Form, Icon, Input, Button, Card } from 'antd';
 import './login.less'
 
 class Login extends Component{
+   
     login=()=>{
         let result = this.props.form.getFieldsValue()
         console.log(result)
@@ -26,7 +27,10 @@ class Login extends Component{
         })
     }
     render(){
-        console.log('this',this)
+        // console.log('this',this)
+        if(localStorage.length!==0){
+            localStorage.clear()
+            }
         const { getFieldDecorator } = this.props.form;
         return(
             <Fragment>
@@ -35,7 +39,7 @@ class Login extends Component{
                 <Form.Item>
                 {getFieldDecorator('us',{})(
                     <Input className='inputbox'
-                        prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        prefix={    <Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                         placeholder="Username"
                     />
                 )}

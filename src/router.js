@@ -16,7 +16,7 @@ class RootRouter extends Component{
             <TokenModel></TokenModel>
                 <Switch>
                 <Redirect exact from='/' to='/login'></Redirect>
-                <Route path='/admin' render={()=>{
+                <Route path='/admin' render={(props)=>{
                     return(
                         <Admin>
                             <Route exact path='/admin/usermanage' component={UserManage}></Route>
