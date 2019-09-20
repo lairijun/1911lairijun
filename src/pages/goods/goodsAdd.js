@@ -27,9 +27,9 @@ class GoodsAdd extends Component{
             let url='/hehe/admin/goods/goodsadd'
             let data={name,price,imgpath,desc,goodstype}
             this.$axios.post(url,data).then((res)=>{
-            console.log(res)
-                if(res.err===0){
-                    message.success('add ok')
+            // console.log(res)
+                if(res.data.err===0){
+                    message.success('商品上传成功')
                 }
             })
         }else{
@@ -40,12 +40,14 @@ class GoodsAdd extends Component{
         let file=this.refs.file.files[0]
         console.log(file)
         let formdata= new FormData()
-        formdata.append('img',file)//key值是single里的image
+        formdata.append('img',file)//key值是single里的img
         this.$axios.post('/hehe/imgupload',formdata)
+
         .then((data)=>{
             console.log(data)
             if(data.data.err === 0){
                 this.setState({imgpath:data.data.imgpath})
+                message.success('图片上传成功')
             }else{
                 message.error('文件上传失败请重试')
             }
@@ -58,24 +60,22 @@ class GoodsAdd extends Component{
                 <span>品名:</span><input type="text" value = {name} onChange={(e)=>{
                    this.setState({name:e.target.value}) 
                 }}/><br/>
+
                 <span>价格:</span><input type="number" value = {price} onChange={(e)=>{
                    this.setState({price:e.target.value}) 
                 }}/><br/>
-                {/* <span>缩略图:</span><input type="file" ref='file'/><br/>
-                <button onClick={this.upload}>上传</button>
-                <img src={imgpath} withd='80' height='80' alt=""/> */}
-                <span>缩略图:</span><input type="file" ref='file'/> 
-                <button onClick={this.upload}>上传</button>
-                <img src={imgpath} width='80' height='80' alt=""/>
 
+                <span>缩略图:</span><input type="file" ref='file'/> 
                 <br/>
 
+                <button onClick={this.upload} className='onebut'>上传</button>
+                <img src={`http://localhost:8080${imgpath}`} alt=""/>
+                <br/>
+                
                 <span>描述:</span><input type="text" value = {desc} onChange={(e)=>{
                    this.setState({desc:e.target.value}) 
                 }}/><br/>
-                {/* <span>类型:</span><input type="text" value = {goodstype} onChange={(e)=>{
-                   this.setState({goodstype:e.target.value}) 
-                }}/> */}
+              
                 <span>类型:</span><select value={goodstype}  onChange={(e)=>{
                     this.setState({goodstype:e.target.value})
                 }}>
