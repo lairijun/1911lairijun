@@ -14,6 +14,7 @@ app.use(bodyParser.json())
 //静态资源目录
 app.use('/public',express.static(path.join(__dirname,'./www')))
 
+
 //登录
 const AdminUser = require('./router/admin/userRouter')
 app.use('/admin/user',AdminUser)
@@ -22,12 +23,30 @@ app.use('/admin/user',AdminUser)
 const GoodsAdd = require('./router/admin/goodsRouter')
 app.use('/admin/goods',GoodsAdd)
 
+//商品相关
+const AdminGoods = require('./router/admin/goodsRouter')
+app.use('/admin/about',(req,res,next)=>{
+    //验证token合法性
+    let {token} = req.body
+    // console.log(req.body)
+    if(token){
+        jwt.verify(token,secret,(err,data)=>{
+            if(err){
+                res.send({err:-997,msg:'token失效'})
+            }else{
+                next()
+            }
+        })
+    }else{
+        res.send({err:-998,msg:'token缺失'})
+    }
+},AdminGoods)
 
 //菜品管理
 const AdminFood = require('./router/admin/foodRouter')
 app.use('/admin/food',(req,res,next)=>{
     //验证token合法性
-    let {token} = req.body||req.file
+    let {token} = req.body
     console.log('body',req)
     console.log('file',req.file)
     if(token){
@@ -64,3 +83,4 @@ app.post('/imgupload',multer().single('img'),(req,res)=>{
 app.listen(8080,()=>{
     console.log('server start')
 })
+console.log(mongodb)

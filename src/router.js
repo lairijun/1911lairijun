@@ -5,7 +5,10 @@ import Admin from 'pages/admin'
 import Login from 'pages/login/login.js'
 import UserManage from 'pages/usermanage/usermanage.js'
 import AdminManage from 'pages/adminmanage/adminmanage.js'
+
 import Goodsadd from 'pages/goods/goodsAdd'
+import Goodsabout from 'pages/goods/goodsAbout'
+
 import TokenModel from 'components/tokenModel'
 class RootRouter extends Component{
     render(){
@@ -20,7 +23,10 @@ class RootRouter extends Component{
                         <Admin>
                             <Route exact path='/admin/usermanage' component={UserManage}></Route>
                             <Route exact path='/admin/adminmanage' component={AdminManage}></Route>
+                            
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
+                            <Route path='/admin/goodsabout' component={Goodsabout}></Route>
+                            
                         </Admin>
                     )
                 }}></Route>
