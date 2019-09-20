@@ -27,9 +27,12 @@ router.post('/banneradd',(req,res)=>{
 
 //banner列表
 router.post('/bannerlist',(req,res)=>{
+    // let {page,pageSize}=req.body
+    // let total=0
     // let {id,imgpath}=req.body
     bannerModel.find()
     .then((data)=>{
+        // total=data.length
         if(data.length>0){
             res.send({err:0,msg:'查询成功',data})  
         }else{
@@ -55,12 +58,20 @@ router.post('/bannerdel',(req,res)=>{
 })
 
 //banner修改
-router.post('/update',(req,res)=>{
-    let {_id,name,desc,img,price,foodtype}=req.body
-    foodModel.updateOne({_id:_id},{name,desc,img,price,foodtype})
+router.post('/bannerupdate',(req,res)=>{
+    let {_id,id,imgpath}=req.body  
+
+    bannerModel.updateOne({_id:_id},{id,imgpath})
     .then((data)=>{
-        res.send({err:0,msg:'修改成功'})
+            res.send({err:0,msg:'修改成功'})  
+    })
+    .catch((err)=>{
+        console.log(err)
+        res.send({err:-880,msg:'内部错误请重试'})
     })
 })
+
+
+
 
 module.exports = router                               

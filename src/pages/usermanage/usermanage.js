@@ -74,7 +74,7 @@ class UserManage extends Component{
             dataIndex: 'action',
             key: 'action',  
             width:300,
-            fixed:'right',  
+            fixed:'left',  
             render:(txt,record)=>{
                 console.log(record)
                 return(
