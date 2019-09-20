@@ -23,11 +23,9 @@ app.use('/admin/user',AdminUser)
 const GoodsAdd = require('./router/admin/goodsRouter')
 app.use('/admin/goods',GoodsAdd)
 
-<<<<<<< HEAD
 //banner添加
 const BannerAdd=require('./router/admin/bannerRouter')
 app.use('/admin/banner',BannerAdd)
-=======
 //商品相关
 const AdminGoods = require('./router/admin/goodsRouter')
 app.use('/admin/about',(req,res,next)=>{
@@ -46,7 +44,6 @@ app.use('/admin/about',(req,res,next)=>{
         res.send({err:-998,msg:'token缺失'})
     }
 },AdminGoods)
->>>>>>> ywd
 
 //菜品管理
 const AdminFood = require('./router/admin/foodRouter')

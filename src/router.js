@@ -26,12 +26,9 @@ class RootRouter extends Component{
                             <Route exact path='/admin/adminmanage' component={AdminManage}></Route>
                             
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
-<<<<<<< HEAD
                             <Route path='/admin/banner/add' component={Banner}></Route>
-=======
                             <Route path='/admin/goodsabout' component={Goodsabout}></Route>
                             
->>>>>>> ywd
                         </Admin>
                     )
                 }}></Route>
