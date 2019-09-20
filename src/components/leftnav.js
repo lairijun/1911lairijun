@@ -50,9 +50,8 @@ const {SubMenu}=Menu;
               </span>
             }>
               <Menu.Item key="91" onClick={this.jump.bind(this,'/admin/banner/list')}>轮播图列表</Menu.Item>
-              <Menu.Item key="92" onClick={this.jump.bind(this,'/admin/banner/add')}>轮播图添加</Menu.Item>
-              <Menu.Item key="93">轮播图修改</Menu.Item>
-              <Menu.Item key="94">轮播图删除</Menu.Item>
+              <Menu.Item key="92" onClick={this.jump.bind(this,'/admin/banner/add')}>轮播图上传</Menu.Item>
+              
             
             </SubMenu>
             <Menu.Item key="10">广告位管理</Menu.Item>

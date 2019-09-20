@@ -12,11 +12,12 @@ class bannerList extends Component{
         total:0,
         loading:true,
         updateShow:false,
+        search:''
       }
   }
   componentDidMount(){
     let {page,pageSize} = this.state
-    this.initData()
+    this.initData(page,pageSize)
     }
     columns = [
       {
@@ -92,9 +93,9 @@ confirmDel=(_id)=>{
 
 }
 
-    initData(){
+    initData(page,pageSize){
       let url='/hehe/admin/banner/bannerlist';
-     let data={}
+     let data={page:page,pageSize:pageSize}
       this.$axios.post(url,data).then((res)=>{
          this.setState({dataSource:res.data.data,total:res.data.total,loading:false})
     
@@ -105,7 +106,7 @@ confirmDel=(_id)=>{
   pageChange=(page,pageSize)=>{
     console.log('页码改变',page,pageSize)
     this.setState({page:page})
-    this.initdata(page,this.state.pageSize,this.state.search)
+    this.initData(page,this.state.pageSize,this.state.search)
 }
 
 

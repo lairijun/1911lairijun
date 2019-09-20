@@ -127,7 +127,7 @@ class UserManage extends Component{
     pageChange=(page,pageSize)=>{
         console.log('页码改变',page,pageSize)
         this.setState({page:page})
-        this.initdata(page,this.state.pageSize,this.state.search)
+        this.initata(page,this.state.pageSize,this.state.search)
     }
 
     findbytype=(value)=>{
