@@ -4,7 +4,7 @@ import {Card, Button ,message} from 'antd'
 class bannerAdd extends Component{
    constructor(){
       super()
-      this.state={id:'',imgpath:''}
+      this.state={id:'',imgpath:'/public/images/zanwu.jpeg'}
    }
    submit=()=>{   //商品信息上传
         let {id,imgpath} = this.state
@@ -46,8 +46,12 @@ class bannerAdd extends Component{
                 }}/><br/>
             
                 <span>缩略图:</span><input type="file" ref='file'/> 
-                <button onClick={this.upload}>上传</button>
-                <img src={imgpath} width='80' height='80' alt=""/>
+                <br/>
+                
+                <button onClick={this.upload} className='onebut'>上传</button>
+                
+               
+                <img src={`http://localhost:8080${imgpath}`} alt=""/>
 
                 <br/>
                 <Button type='primary' onClick={this.submit}>提交</Button>
