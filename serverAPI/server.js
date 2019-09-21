@@ -45,6 +45,9 @@ app.use('/admin/about',(req,res,next)=>{
     }
 },AdminGoods)
 
+//banner列表/查询
+const BannerList=require('./router/admin/bannerRouter')
+app.use('/admin/banner',BannerList)
 //菜品管理
 const AdminFood = require('./router/admin/foodRouter')
 app.use('/admin/food',(req,res,next)=>{
