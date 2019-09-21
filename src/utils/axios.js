@@ -19,7 +19,7 @@ axios.interceptors.request.use(function (config) {
  
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
-  response.config.data=JSON.parse(response.config.data)
+  // response.config.data=JSON.parse(response.config.data)
   if(response.status===200){
     if(response.data.err===-998||response.config.data.token===null){
       Store.dispatch(ActionCreator.changeModelState())

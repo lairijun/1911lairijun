@@ -5,20 +5,8 @@ import  './goodsAdd.less'
 class GoodsAdd extends Component{
    constructor(){
       super()
-      this.state={name:'',price:'',imgpath:'',desc:'',goodstype:'男装'}
+      this.state={name:'',price:'',imgpath:'/public/images/zanwu.jpeg',desc:'',goodstype:'男装'}
    }
-
-//    initData(){
-//         this.$axios.post('/hehe/admin/goods/goodsadd',{
-//             name:'wqe',price:'41',imgpath:'asd',desc:'das',goodstype:'sad'
-//         }).then((res)=>{
-//             console.log(res)
-//         })
-//    }
-
-//    componentDidMount(){
-//         this.initData()
-//    }
 
    submit=()=>{   //商品信息上传
         let {name,price,imgpath,desc,goodstype} = this.state
@@ -40,6 +28,7 @@ class GoodsAdd extends Component{
         let file=this.refs.file.files[0]
         console.log(file)
         let formdata= new FormData()
+        
         formdata.append('img',file)//key值是single里的img
         this.$axios.post('/hehe/imgupload',formdata)
 
