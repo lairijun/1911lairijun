@@ -54,8 +54,16 @@ const {SubMenu}=Menu;
               
             
             </SubMenu>
-            <Menu.Item key="10">广告位管理</Menu.Item>
-            <Menu.Item key="11">标题栏管理</Menu.Item>
+            {/* <Menu.Item key="10">广告位管理</Menu.Item> */}
+            <SubMenu key="11" title={
+              <span>
+                <Icon type="mail" />
+                <span>标题栏管理</span>
+              </span>
+            }>
+              <Menu.Item key="101" onClick={this.jump.bind(this,'/admin/titlebar/list')}>标题栏列表</Menu.Item>
+              <Menu.Item key="102" onClick={this.jump.bind(this,'/admin/titlebar/add')}>标题栏上传</Menu.Item>
+            </SubMenu>
             <Menu.Item key="12">...</Menu.Item>
           </SubMenu>
           <SubMenu

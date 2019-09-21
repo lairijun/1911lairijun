@@ -28,6 +28,12 @@ app.use('/admin/banner',BannerAdd)
 //banner列表/查询
 const BannerList=require('./router/admin/bannerRouter')
 app.use('/admin/banner',BannerList)
+//titlebar添加
+const TitlebarAdd=require('./router/admin/titlebarRouter')
+app.use('/admin/titlebar',TitlebarAdd)
+//titlebar列表/查询
+const TitlebarList=require('./router/admin/titlebarRouter')
+app.use('/admin/titlebar',TitlebarList)
 //菜品管理
 const AdminFood = require('./router/admin/foodRouter')
 app.use('/admin/food',(req,res,next)=>{

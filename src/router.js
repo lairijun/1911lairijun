@@ -9,6 +9,8 @@ import Goodsadd from 'pages/goods/goodsAdd'
 import TokenModel from 'components/tokenModel'
 import Banneradd from 'pages/title/banner/bannerAdd.js'
 import Bannerlist from 'pages/title/banner/bannerList.js'
+import Titlebaradd from 'pages/title/titlebar/titlebarAdd.js'
+import Titlebarlist from 'pages/title/titlebar/titlebarList.js'
 class RootRouter extends Component{
     render(){
         return(
@@ -25,6 +27,8 @@ class RootRouter extends Component{
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
                             <Route path='/admin/banner/add' component={Banneradd}></Route>
                             <Route path='/admin/banner/list' component={ Bannerlist}></Route>
+                            <Route path='/admin/titlebar/add' component={Titlebaradd}></Route>
+                            <Route path='/admin/titlebar/list' component={Titlebarlist}></Route>
                         </Admin>
                     )
                 }}></Route>
