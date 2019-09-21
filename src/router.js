@@ -5,7 +5,10 @@ import Admin from 'pages/admin'
 import Login from 'pages/login/login.js'
 import UserManage from 'pages/usermanage/usermanage.js'
 import AdminManage from 'pages/adminmanage/adminmanage.js'
+
 import Goodsadd from 'pages/goods/goodsAdd'
+import Goodsabout from 'pages/goods/goodsAbout'
+
 import TokenModel from 'components/tokenModel'
 import Banneradd from 'pages/title/banner/bannerAdd.js'
 import Bannerlist from 'pages/title/banner/bannerList.js'
@@ -24,7 +27,10 @@ class RootRouter extends Component{
                         <Admin>
                             <Route exact path='/admin/usermanage' component={UserManage}></Route>
                             <Route exact path='/admin/adminmanage' component={AdminManage}></Route>
+                            
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
+                            <Route path='/admin/goodsabout' component={Goodsabout}></Route>
+
                             <Route path='/admin/banner/add' component={Banneradd}></Route>
                             <Route path='/admin/banner/list' component={ Bannerlist}></Route>
                             <Route path='/admin/titlebar/add' component={Titlebaradd}></Route>

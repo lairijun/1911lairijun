@@ -23,20 +23,49 @@ router.post('/goodsadd',(req,res)=>{
         res.send({err:-880,msg:'内部错误请重试'})
     })
 })
-//图片上传
-// router.post('/imgload',multer().single('img'),(req,res)=>{
-//     console.log(123,req.file)
-//     let {buffer,mimetype} = req.file
-//     let filename=(new Date().getTime()+parseInt(Math.random()*999999)+parseInt(Math.random()*999999))
-//     let extname=mimetype.split('/')[1]
-//     let dir=path.join(__dirname,'../../www/images')
-//     let imgpath=`/public/images/${filename}.${extname}`
-//     fs.writeFile(`${dir}/${filename}.${extname}`,buffer,(err)=>{
-//         if(err){
-//             res.send({err:-1,msg:'图片上传失败'})
-//         }else{
-//             res.send({err:0,msg:'图片上传成功',imgpath:imgpath})
-//         }
-//     })
-// })
+
+//商品删除
+router.post('/del',(req,res)=>{
+    let {id}=req.body
+    // console.log(req.body)
+    
+    goodsModel.deleteOne({_id:id})
+    .then((data)=>{ 
+        console.log(data)
+        res.send({err:0,msg:'删除ok'})
+    })
+    .catch((err)=>{
+        console.log(err)
+        res.send({err:-911,msg:'删除失败'})
+    })
+})
+
+//商品修改
+router.post('/update',(req,res)=>{
+    let {_id,name,desc,imgpath,price,goodstype}=req.body
+    console.log(req.body)
+    goodsModel.updateOne({_id:_id},{name,desc,imgpath,price,goodstype})
+    .then((data)=>{
+        res.send({err:0,msg:'商品已修改'})
+    })
+})
+
+//商品查询
+router.post('/findByTypePage',(req,res)=>{
+    let {goodstype,page,pageSize}=req.body
+    let typeSearch={}
+    if(goodstype){
+        typeSearch.goodstype=goodstype
+    }
+    let total=0
+    goodsModel.find(typeSearch)
+    .then((data)=>{
+        total=data.length
+        return goodsModel.find(typeSearch).skip((page-1)*pageSize).limit(Number(pageSize))
+    })
+    .then((data)=>{
+        res.send({err:0,msg:'查询OK',list:data,total:total})
+    })
+})
+
 module.exports = router                               

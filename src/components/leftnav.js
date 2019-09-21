@@ -76,7 +76,8 @@ const {SubMenu}=Menu;
             }
           >
            <Menu.Item key="30" onClick={this.jump.bind(this,'/admin/goodsadd')}>商品添加</Menu.Item>
-       
+           <Menu.Item key="918" onClick={this.jump.bind(this,'/admin/goodsabout')}>商品查询</Menu.Item>
+           
           </SubMenu>
           <SubMenu
             key="sub4"
