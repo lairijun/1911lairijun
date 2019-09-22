@@ -4,6 +4,11 @@ export default{
             type:'CHANGE_MODELSTATE'
         }
         return action
-    }
-    
+    },
+    changeTriggerState(){
+        let action={
+               type:'CHANGE_TRIGGERSTATE',
+           }
+           return action
+       }
 }
