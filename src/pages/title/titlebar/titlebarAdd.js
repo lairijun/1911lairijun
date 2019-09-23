@@ -1,17 +1,17 @@
 import React,{Component} from 'react'
 import {Card, Button ,message} from 'antd'
 
-class bannerAdd extends Component{
+class titlebarAdd extends Component{
    constructor(){
       super()
-      this.state={id:'',imgpath:'/public/images/zanwu.jpeg'}
+      this.state={title:'',imgpath:''}
    }
-   submit=()=>{   //商品信息上传
-        let {id,imgpath} = this.state
-        console.log({id,imgpath})
+   submit=()=>{   //标题信息上传
+        let {title,imgpath} = this.state
+        console.log({title,imgpath})
         if(imgpath !==''){
-            let url='/hehe/admin/banner/banneradd'
-            let data={id,imgpath}
+            let url='/hehe/admin/titlebar/titlebaradd'
+            let data={title,imgpath}
             this.$axios.post(url,data).then((res)=>{
             console.log(res)
                 if(res.err===0){
@@ -19,7 +19,7 @@ class bannerAdd extends Component{
                 }
             })
         }else{
-            message.error('快点上传图片')
+            message.error('请上传图片')
         }    
    }
    upload=()=>{  //图片信息上传
@@ -38,20 +38,16 @@ class bannerAdd extends Component{
         })
    }
    render(){
-        let {id,imgpath} = this.state   
+        let {title,imgpath} = this.state   
         return (
             <Card className='add_container'>
-                <span>id:</span><input type="text" value = {id} onChange={(e)=>{
-                   this.setState({id:e.target.value}) 
+                <span>标题:</span><input type="text" value = {title} onChange={(e)=>{
+                   this.setState({title:e.target.value}) 
                 }}/><br/>
             
                 <span>缩略图:</span><input type="file" ref='file'/> 
-                <br/>
-                
-                <button onClick={this.upload} className='onebut'>上传</button>
-                
-               
-                <img src={`http://localhost:8080${imgpath}`} alt=""/>
+                <button onClick={this.upload}>上传</button>
+                <img src={imgpath} width='80' height='80' alt=""/>
 
                 <br/>
                 <Button type='primary' onClick={this.submit}>提交</Button>
@@ -59,4 +55,4 @@ class bannerAdd extends Component{
         )
    }
 }
-export default  bannerAdd
+export default  titlebarAdd

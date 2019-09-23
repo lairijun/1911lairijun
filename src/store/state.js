@@ -1,4 +1,4 @@
 export default{
     modelState:false,
-    userinfo:''
+    collapsed: false,
 }
