@@ -21,16 +21,22 @@ class GoodsAbout extends Component{
       title: '品名',
       dataIndex: 'name',    //下标，不能重复
       key: 'name',          //对应表头每一条数据里的key值
+      width:200,
+      fixed:'left'
     },
     {
       title: '价格',
       dataIndex: 'price',
       key: 'price',
+      width:200,
+      fixed:'left'
     },
     {
       title: '图片',
       dataIndex: 'imgpath',
       key: 'imgpath',
+      width:200,
+      fixed:'left',
       render:(data)=>{
         console.log(data)
         return(
@@ -42,16 +48,22 @@ class GoodsAbout extends Component{
       title: '描述',
       dataIndex: 'desc',
       key: 'desc',
+      width:150,
+      fixed:'left',
     },
     {
       title: '类别',
       dataIndex: 'goodstype',
       key: 'goodstype',
+      width:150,
+      fixed:'left',
     },
     {
       title: '操作',
       dataIndex: 'tool',
       key: 'tool',
+      width:150,
+      fixed:'left',
       render:(txt,record)=>{ //record里面是当前商品所有信息
         return(
           <div>
