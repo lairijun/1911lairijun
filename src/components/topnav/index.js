@@ -72,7 +72,7 @@ render(){
           title={
             <div className="hand">
              <div className='handimg'>
-             <Avatar icon="user" style={{position:'absolute' ,left:'0',top:'5px'}} src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" />
+             <Avatar icon="user" style={{position:'absolute' ,left:'-9px',top:'6px'}} src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png" />
    
          <span>{userinfo}</span>
           </div>

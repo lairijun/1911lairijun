@@ -39,10 +39,11 @@ class UserManage extends Component{
             dataIndex: 'profile',
             key: 'profile',
             width:100,
+            fixed:'left',
             render:(data)=>{
                 console.log(777,data)
                 return(
-                    <img width='60' src={`http://10.9.22.244:8080${data}`} alt=''/>
+                    <img width='60' src={`http://localhost:8080${data}`} alt=''/>
                 )
             }
         },
@@ -73,8 +74,7 @@ class UserManage extends Component{
             title: '操作',
             dataIndex: 'action',
             key: 'action',  
-            width:300,
-            fixed:'left',  
+            width:200, 
             render:(txt,record)=>{
                 console.log(record)
                 return(

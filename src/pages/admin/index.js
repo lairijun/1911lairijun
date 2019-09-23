@@ -20,11 +20,7 @@ class Admin extends Component{
           localStorage.setItem('us',this.props.location.state.us)
     }
  }
-
-  
- 
     // console.log(this.props.location.state.us)
-    localStorage.setItem("logindata",`[{"us":${this.props.location.state.us}},{"token":${this.props.location.state.token}}]`)
   }
 
     render(){

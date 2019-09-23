@@ -26,11 +26,9 @@ class RootRouter extends Component{
                     return(
                         <Admin>
                             <Route exact path='/admin/usermanage' component={UserManage}></Route>
-                            <Route exact path='/admin/adminmanage' component={AdminManage}></Route>
-                            
+                            <Route exact path='/admin/adminmanage' component={AdminManage}></Route> 
                             <Route path='/admin/goodsadd' component={Goodsadd}></Route>
                             <Route path='/admin/goodsabout' component={Goodsabout}></Route>
-
                             <Route path='/admin/banner/add' component={Banneradd}></Route>
                             <Route path='/admin/banner/list' component={ Bannerlist}></Route>
                             <Route path='/admin/titlebar/add' component={Titlebaradd}></Route>
