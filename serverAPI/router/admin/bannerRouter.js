@@ -30,7 +30,7 @@ router.post('/bannerlist',(req,res)=>{
      let {page,pageSize}=req.body
      let total=0
      let {id,imgpath}=req.body
-
+    console.log(id,imgpath)
     bannerModel.find()
     .then((data)=>{
         console.log(data)
